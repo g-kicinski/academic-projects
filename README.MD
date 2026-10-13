@@ -1,4 +1,4 @@
-#Repository Overview
+# Repository Overview
 This repository contains two distinct projects:
 
 ### 1. Distributed Transformer Pretraining (`Distributed Transformer Pretraining/`)
