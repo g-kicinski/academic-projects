@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH --job-name=interactive_gpu
+#SBATCH --gres=gpu:1
+#SBATCH --partition=plgrid-gpu-a100
+#SBATCH --cpus-per-gpu=8
+#SBATCH --mem=125G
+#SBATCH --account=plgpkattenion-gpu-a100
+#SBATCH --time=0-01:00:00
+#SBATCH --output=slurm-%j.out
+
+NUM_LAYERS=4
+D_MODEL=256
+NUM_HEADS=4
+BATCH_SIZE=64
+TRAIN_STEPS=1000
+
+python main.py \
+  --num_layers $NUM_LAYERS \
+  --d_model $D_MODEL \
+  --num_heads $NUM_HEADS \
+  --batch_size $BATCH_SIZE \
+  --train_steps $TRAIN_STEPS
